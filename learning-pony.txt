@@ -1,0 +1,16 @@
+actor Main
+  new create(env: Env) =
+    env.out.print("Hello World")
+    env.out.print("Hello Again")
+        
+        // var num: Int
+
+        // new create() =>
+        //     num = 5
+
+        // env.out.print("Num is ")
+        
+
+
+
+        
