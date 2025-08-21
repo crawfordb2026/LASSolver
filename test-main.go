@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func main2() {
 	numIter := -1
 	fmt.Print("How many iterations of the LookAndSay puzzle do you want to print: ")
 	fmt.Scan(&numIter)
@@ -27,6 +27,8 @@ func main() {
 	current := make([]int, 20)
 	current[0] = 2
 	current[1] = 1
+	// current[2] = 1
+	// current[3] = 1
 
 	next := make([]int, 20)
 	var index int 
@@ -34,8 +36,17 @@ func main() {
 		var numRepeat int = 1
 		var prevNum int = current[0]
 		index = 0 // current index for next
+		
+		// fmt.Print("numRepeat: ", numRepeat, "\n")
+		// fmt.Print("prevNum: ", prevNum, "\n")
+
+		//printCurrent(current)
 
 		for j := 1; j < len(current); j++ { // this loop iterates thru EACH INDEX of each iteration of the puzzle
+			// fmt.Print("Current: ")
+			// printCurrent(current)
+			// fmt.Print("numRepeat: ", numRepeat, "\n")
+			// fmt.Print("prevNum: ", prevNum, "\n")
 			if current[j] == prevNum {
 				numRepeat++
 			} else {
@@ -51,10 +62,10 @@ func main() {
 			}
 		} // end of inner loop
 
-		// Copies next to current without altering pointers
-		for k := 0; k < len(current); k++ {
-			current[k] = next[k] 
-		}
+		//current = next
+			for k := 0; k < len(current); k++ {
+				current[k] = next[k] 
+			}
 		
 		fmt.Printf("The %dth number in the sequence is ", i)
 		printCurrent(next)
@@ -63,7 +74,7 @@ func main() {
 
 } // end of main function
 
-func printCurrent(next []int ){
+func printCurrent2(next []int ){
 	for j := 0; j < len(next); j++ {
 		if (next[j] == 0){
 			break
